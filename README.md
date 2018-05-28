@@ -1,13 +1,10 @@
 # Omnic
 This Discord bot posts Overwarch patch notes links into your #Overwatch channel as they're released.
 
-To run, you must set your OMNIC_KEY environmental variable to your bot's api token.
-
 ## Invite to your server
 If you want this service on your server, you can invite the main **Omnic** bot to your 
 server through [this link](https://discordapp.com/oauth2/authorize?client_id=450375495234748416&scope=bot).
 Once invited, it will post to your `#overwatch` channel (make sure it exists!) whenever new patch notes are out.
-
 
 ## Prerequisites to Install
 
