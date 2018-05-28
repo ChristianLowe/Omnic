@@ -1,5 +1,5 @@
 # Omnic
-This Discord bot posts Overwarch patch notes links into your #Overwatch channel as they're released.
+This Discord bot posts Overwatch patch notes links into your #Overwatch channel as they're released.
 
 ## Invite to your server
 If you want this service on your server, you can invite the main **Omnic** bot to your 
