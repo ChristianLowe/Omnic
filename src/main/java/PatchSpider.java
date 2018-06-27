@@ -13,7 +13,8 @@ class PatchSpider {
     }
 
     private static final String BASE_PAGE = "https://playoverwatch.com/en-us/game/patch-notes/pc/";
-    private static final String LIST_XPATH = "//ul[@class='blog-sidebar-list']";
+    private static final String NAV_XPATH = "//div[@class='PatchNotesSideNav']";
+    private static final int DIV_UL_CHILD_NUM = 1;
 
     private WebClient webClient;
 
@@ -30,7 +31,8 @@ class PatchSpider {
         log.debug("Connecting to " + BASE_PAGE);
 
         val page = (HtmlPage) webClient.getPage(BASE_PAGE);
-        val patchNotesList = (HtmlUnorderedList) page.getByXPath(LIST_XPATH).get(0);
+        val patchNotesNav = (HtmlDivision) page.getByXPath(NAV_XPATH).get(0);
+        val patchNotesList = (HtmlUnorderedList) patchNotesNav.getChildNodes().get(DIV_UL_CHILD_NUM);
         val recentPatchContainer = (HtmlListItem) patchNotesList.getFirstChild();
         val recentPatchAnchor = (HtmlAnchor) recentPatchContainer.getFirstChild();
         val recentPatchHeader = (HtmlHeading3) recentPatchAnchor.getFirstChild();
