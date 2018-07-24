@@ -21,6 +21,8 @@ public class Main {
     }
 
     private static void updateLatestPatch(PatchInfo newPatch) {
+        if (newPatch == null) return;
+
         if (!newPatch.equals(latestPatch)) {
             log.info("Pushing new patch: " + newPatch.getPatchName());
 
