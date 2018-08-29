@@ -17,6 +17,7 @@ class PatchSpider {
     private static final String BASE_PAGE = "https://playoverwatch.com/en-us/game/patch-notes/pc/";
     private static final String NAV_XPATH = "//div[@class='PatchNotesSideNav']";
     private static final int DIV_UL_CHILD_NUM = 1;
+    private static final int TIMEOUT_IN_MS = 30_000;
 
     private WebClient webClient;
 
@@ -30,6 +31,7 @@ class PatchSpider {
         webClient.getOptions().setCssEnabled(false);
         webClient.getOptions().setJavaScriptEnabled(false);
         webClient.getOptions().setThrowExceptionOnFailingStatusCode(true);
+        webClient.getOptions().setTimeout(TIMEOUT_IN_MS);
         log.debug("PatchSpider initialized.");
     }
 
